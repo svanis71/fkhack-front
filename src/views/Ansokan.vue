@@ -27,9 +27,8 @@ export default class Statistik extends Vue {
     const response = await fetch(`${BAS_URL}/avsluta`, {
       headers: { token: this.stuff.ref }
     });
-    if (response.ok) {
-      alert("Bra jobbat!");
-    }
+
+    this.$router.push({name: "start", query: {ok: response.ok}});
   }
 }
 </script>
