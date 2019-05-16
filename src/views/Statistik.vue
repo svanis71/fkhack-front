@@ -1,8 +1,9 @@
 <template>
-  <div class="Statistik">
+  <div class="Statistik" v-if="statistik">
     <div>
       <h2>Total</h2>
-      <Tabell v-if="statistik" v-bind:values="statistik.total"></Tabell>
+      <Tabell v-bind:values="statistik.total"></Tabell>
+      <StapelDiagram v-bind:values="statistik.total"/>
     </div>
     <div>
       <h2>Grupp A</h2>
@@ -16,25 +17,27 @@
 </template>
 
 <style scoped lang="stylus">
-  .Statistik
-    display grid
-    grid-template-columns repeat(3, 1fr)
+.Statistik {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 </style>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { BAS_URL} from '../main';
-import Tabell from '@/components/Tabell';
+import { Component, Vue } from "vue-property-decorator";
+import { BAS_URL, StatistikData } from "@/main";
+import Tabell from "@/components/Tabell";
+import StapelDiagram from "@/components/StapelDiagram";
 
 @Component({
-  components: {Tabell},
+  components: { Tabell, StapelDiagram }
 })
 export default class Statistik extends Vue {
-   statistik: StatistikData = null;
+  statistik: StatistikData = null;
 
-  async created(){
-     const response = await fetch(`${BAS_URL}/statistik`);
-     this.statistik = await response.json();
+  async created() {
+    const response = await fetch(`${BAS_URL}/statistik`);
+    this.statistik = await response.json();
   }
 }
 </script>

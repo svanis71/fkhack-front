@@ -2,44 +2,33 @@
   <div class="hello">
     <table>
       <tr>
-        <th>
-          Antal påbörjade:
-        </th>
-         <td>
-           {{values.started}}
-         </td>
+        <th>Antal påbörjade:</th>
+        <td>{{values.started}}</td>
       </tr>
       <tr>
-        <th>
-          Antal avslutade:
-        </th>
-         <td>
-           {{values.ended}}
-         </td>
+        <th>Antal avslutade:</th>
+        <td>{{values.ended}}</td>
       </tr>
       <tr>
-        <th>
-          Mediantid:
-        </th>
-         <td>
-           {{values.median}}s
-         </td>
+        <th>Mediantid:</th>
+        <td>{{values.median}}s</td>
       </tr>
     </table>
   </div>
 </template>
 
 <style scoped lang="stylus">
-  table
-    border 1px solid black;
-    margin-bottom 20px;
+table {
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
 </style>
 
 
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import FlodesStatistik from '../main';
+import { FlodesStatistik } from "@/main";
 
 @Component
 export default class Tabell extends Vue {
