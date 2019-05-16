@@ -1,19 +1,23 @@
 <template>
-  <canvas></canvas>
+  <div>
+    <canvas></canvas>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { FlodesStatistik } from "@/main";
+import { StatistikData } from "@/main";
 import Chart from "chart.js";
 
 @Component
 export default class StapelDiagram extends Vue {
-  @Prop() private values!: FlodesStatistik;
+  @Prop() private values!: StatistikData;
 
   mounted() {
-    const el = this.$el;
-    const ctx = this.$el.getContext("2d");
+    const el = this.$el.querySelector("canvas");
+    const ctx = (el as HTMLCanvasElement).getContext("2d");
+    const tidGruppA = this.values.A.median;
+    const tidGruppB = this.values.B.median;
     const chart = new Chart(ctx, {
       type: "bar",
       data: {
@@ -21,9 +25,9 @@ export default class StapelDiagram extends Vue {
 
         datasets: [
           {
-            label: "mediantid",
-            data: [24, 52],
-            backgroundColor: ["#EFABCD"]
+            label: "Tid i sekunder (median)",
+            data: [tidGruppA, tidGruppB],
+            backgroundColor: ["#116a3e", "#0d462b"]
           }
         ]
       },
