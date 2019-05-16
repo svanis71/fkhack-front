@@ -23,8 +23,18 @@
 
 <style scoped lang="stylus">
 .tabeller {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+
+  > div {
+    margin-right: 1em;
+  }
+}
+
+h2 {
+  background-color: #0D462B;
+  color: white;
+  text-align: center;
+  padding: 0.24em;
 }
 
 .diagram {
