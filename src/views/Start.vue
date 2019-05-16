@@ -1,6 +1,6 @@
 <template>
   <div class="Statistik">
-    <p v-if="visaStatus">Tack för din ansökan.</p>
+    <p class="kvittens" v-if="visaStatus">Tack för din ansökan.</p>
     <div class="personer">
       <a @click="login('197109259288')">
         <img src="../assets/person1.png">
@@ -38,6 +38,9 @@ form {
     cursor: pointer;
   }
 }
+
+.kvitten {
+}
 </style>
 
 <script lang="ts">
@@ -60,11 +63,10 @@ import { BAS_URL } from "../main";
   }
 })
 export default class Statistik extends Vue {
-  visaStatus: boolean = false;
   pnr: string = "";
 
-  created() {
-    this.visaStatus = this.$route.query.ok === "true";
+  get visaStatus(): boolean {
+    return this.$route.query.hasOwnProperty("ok");
   }
 }
 </script>

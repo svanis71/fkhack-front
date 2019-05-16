@@ -70,6 +70,39 @@ header {
   }
 }
 
+button {
+  background-color: #4a52b6;
+  border-color: #007095;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 700;
+  min-width: 196px;
+  padding: 1.25em;
+}
+
+select {
+  appearance: none;
+  background-color: #f5f6fa;
+  background-image: url('./assets/hake-ned-bla.svg');
+  background-position: 95% 50%;
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
+  font-size: 0.875rem;
+  height: 37px;
+  margin-bottom: 1.5em;
+  padding: 7px 32px 7px 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
 nav {
   background-color: #00311B;
   display: grid;

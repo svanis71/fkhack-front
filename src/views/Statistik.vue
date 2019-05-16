@@ -44,9 +44,9 @@ import CirkelDiagram from "@/components/CirkelDiagram.vue";
   components: { Tabell, CirkelDiagram, StapelDiagram }
 })
 export default class Statistik extends Vue {
-  statistik: StatistikData = null;
+  private statistik: StatistikData = null;
 
-  async created() {
+  public async created() {
     const response = await fetch(`${BAS_URL}/statistik`);
     this.statistik = await response.json();
   }

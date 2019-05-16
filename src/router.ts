@@ -19,7 +19,8 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (Ansokan.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "Ansokan" */ './views/Ansokan.vue'),
+      component: () =>
+        import(/* webpackChunkName: "Ansokan" */ './views/Ansokan.vue'),
     },
     {
       path: '/Statistik',
@@ -27,7 +28,17 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (Ansokan.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "Statistik" */ './views/Statistik.vue'),
+      component: () =>
+        import(/* webpackChunkName: "Statistik" */ './views/Statistik.vue'),
+    },
+    {
+      path: '/Kvittens',
+      name: 'Kvittens',
+      // route level code-splitting
+      // this generates a separate chunk (Ansokan.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "Kvittens" */ './views/Kvittens.vue'),
     },
   ],
 });
