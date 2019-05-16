@@ -1,9 +1,28 @@
 <template>
   <div class="Ansokan">
-    <h1>This is an Ansokan page</h1>
-    <p v-if="stuff.flode === 'A'">Långkalsonger</p>
-    <p v-if="stuff.flode === 'B'">Saltgurka</p>
+    <h1>Ansökan om bidrag</h1>
+    <div>
+      <label for="text1">Hur mycket pengar vill du ha?</label>
+      <input id="text1" type="text">
+      <p>Har du redan mycket pengar?</p>
+      <div v-if="stuff.flode === 'A'">
+        <label>
+          <input type="radio" value="ja" name="pengar">
+          Ja
+        </label>
+        <label>
+          <input type="radio" value="nej" name="pengar">
+          Nej
+        </label>
+      </div>
 
+      <div v-if="stuff.flode === 'B'">
+        <select>
+          <option value="ja">Ja</option>
+          <option value="nej">Nej</option>
+        </select>
+      </div>
+    </div>
     <button @click="avsluta">Skicka in</button>
   </div>
 </template>
@@ -28,7 +47,7 @@ export default class Statistik extends Vue {
       headers: { token: this.stuff.ref }
     });
 
-    this.$router.push({name: "start", query: {ok: response.ok}});
+    this.$router.push({ name: "start", query: { ok: response.ok } });
   }
 }
 </script>
