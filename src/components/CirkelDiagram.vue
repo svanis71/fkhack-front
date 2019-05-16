@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5>Flödestid i sekunder (median)</h5>
+    <h5>Andel avbrutna ansökningar</h5>
     <canvas></canvas>
   </div>
 </template>
@@ -11,46 +11,33 @@ import { StatistikData } from "@/main";
 import Chart from "chart.js";
 
 @Component
-export default class StapelDiagram extends Vue {
+export default class CirkelDiagram extends Vue {
   @Prop() private values!: StatistikData;
 
   mounted() {
     const el = this.$el.querySelector("canvas");
     const ctx = (el as HTMLCanvasElement).getContext("2d");
-    const tidGruppA = this.values.A.median;
-    const tidGruppB = this.values.B.median;
+    const tidGruppA = this.values.A.started - this.values.A.ended;
+    const tidGruppB = this.values.B.started - this.values.B.ended;
     const chart = new Chart(ctx, {
-      type: "bar",
+      type: "pie",
       data: {
         labels: ["Grupp A", "Grupp B"],
 
         datasets: [
           {
-            label: "",
+            label: "Andel avbrutna ansökningar",
             data: [tidGruppA, tidGruppB],
             backgroundColor: ["#116a3e", "#0d462b"]
           }
         ]
       },
       options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true
-              }
-            }
-          ]
-        },
-        legend: {
-          display: false
-        },
         responsive: true,
         maintainAspectRatio: true,
         aspectRatio: 1.3
       }
     });
-    console.log(el);
   }
 }
 </script>

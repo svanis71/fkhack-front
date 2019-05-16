@@ -6,9 +6,9 @@ Vue.config.productionTip = false;
 export const BAS_URL = 'http://localhost:8000';
 
 export interface FlodesStatistik{
-  started: Number;
-  ended: Number;
-  median: Number;
+  started: number;
+  ended: number;
+  median: number;
   }
 
 export interface StatistikData{
