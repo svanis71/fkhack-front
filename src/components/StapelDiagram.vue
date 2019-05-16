@@ -28,7 +28,7 @@ export default class StapelDiagram extends Vue {
           {
             label: "",
             data: [tidGruppA, tidGruppB],
-            backgroundColor: ["#116a3e", "#0d462b"]
+            backgroundColor: ["#bada55", "rgb(255,0,200)"]
           }
         ]
       },

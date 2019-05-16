@@ -3,15 +3,15 @@ import App from './App.vue';
 import router from './router';
 
 Vue.config.productionTip = false;
-export const BAS_URL = 'http://localhost:8000';
+export const BAS_URL = 'https://fkhack-rest.herokuapp.com/';
 
-export interface FlodesStatistik{
+export interface FlodesStatistik {
   started: number;
   ended: number;
   median: number;
-  }
+}
 
-export interface StatistikData{
+export interface StatistikData {
   A: FlodesStatistik;
   B: FlodesStatistik;
   total: FlodesStatistik;

@@ -1,5 +1,5 @@
 <template>
-  <div class="Ansokan">
+  <div class="Ansokan" :class="classes">
     <h1>Ansökan om bidrag</h1>
     <div>
       <label for="text1">Hur mycket pengar vill du ha?</label>
@@ -24,7 +24,11 @@
         </select>
       </div>
     </div>
-    <button @click="avsluta">Skicka in</button>
+
+    <div class="buttons">
+      <router-link to="/">Avbryt</router-link>
+      <button @click="avsluta">Skicka in</button>
+    </div>
   </div>
 </template>
 
@@ -55,6 +59,19 @@ input[type='text'] {
   }
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.flode-A {
+  .buttons {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: flex-end;
+  }
+}
+
 .radioknappar {
   margin-bottom: 1.5em;
 }
@@ -64,6 +81,10 @@ label {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
+}
+
+a {
+  margin: 0 2rem;
 }
 </style>
 
@@ -80,6 +101,10 @@ export default class Statistik extends Vue {
 
   created() {
     this.stuff = JSON.parse(sessionStorage.getItem("stuff") || "{}");
+  }
+
+  public get classes() {
+    return [`flode-${this.stuff!.flode}`];
   }
 
   async avsluta() {

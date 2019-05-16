@@ -28,7 +28,7 @@ export default class CirkelDiagram extends Vue {
           {
             label: "Andel avbrutna ansökningar",
             data: [tidGruppA, tidGruppB],
-            backgroundColor: ["#116a3e", "#0d462b"]
+            backgroundColor: ["#bada55", "rgb(255,0,200)"]
           }
         ]
       },
