@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h5>Tid i sekunder (median)</h5>
     <canvas></canvas>
   </div>
 </template>
@@ -25,7 +26,7 @@ export default class StapelDiagram extends Vue {
 
         datasets: [
           {
-            label: "Tid i sekunder (median)",
+            label: "",
             data: [tidGruppA, tidGruppB],
             backgroundColor: ["#116a3e", "#0d462b"]
           }
@@ -41,6 +42,9 @@ export default class StapelDiagram extends Vue {
             }
           ]
         },
+        legend: {
+          display: false
+        },
         responsive: true,
         maintainAspectRatio: true,
         aspectRatio: 1.3
@@ -52,4 +56,8 @@ export default class StapelDiagram extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="stylus"></style>
+<style scoped lang="stylus">
+h5 {
+  margin-bottom: 1em;
+}
+</style>

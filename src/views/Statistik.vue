@@ -1,25 +1,35 @@
 <template>
   <div class="Statistik" v-if="statistik">
-    <div style="grid-area: a">
-      <h2>Total</h2>
-      <Tabell v-bind:values="statistik.total"></Tabell>
+    <div class="tabeller">
+      <div>
+        <h2>Total</h2>
+        <Tabell v-bind:values="statistik.total"></Tabell>
+      </div>
+      <div>
+        <h2>Grupp A</h2>
+        <Tabell v-if="statistik" v-bind:values="statistik.A"></Tabell>
+      </div>
+      <div>
+        <h2>Grupp B</h2>
+        <Tabell v-if="statistik" v-bind:values="statistik.B"></Tabell>
+      </div>
     </div>
-    <div style="grid-area: b">
-      <h2>Grupp A</h2>
-      <Tabell v-if="statistik" v-bind:values="statistik.A"></Tabell>
+    <div class="diagram">
+      <CirkelDiagram class="dia" v-bind:values="statistik"/>
+      <StapelDiagram class="dia" v-bind:values="statistik"/>
     </div>
-    <div style="grid-area: c">
-      <h2>Grupp B</h2>
-      <Tabell v-if="statistik" v-bind:values="statistik.B"></Tabell>
-    </div>
-    <StapelDiagram class="dia" style="grid-area: d" v-bind:values="statistik"/>
   </div>
 </template>
 
 <style scoped lang="stylus">
-.Statistik {
+.tabeller {
   display: grid;
-  grid-template-areas: 'a b c' '. d d';
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.diagram {
+  display: grid;
+  grid-template-columns: 200px 400px;
 }
 </style>
 
@@ -28,9 +38,10 @@ import { Component, Vue } from "vue-property-decorator";
 import { BAS_URL, StatistikData } from "@/main";
 import Tabell from "@/components/Tabell.vue";
 import StapelDiagram from "@/components/StapelDiagram.vue";
+import CirkelDiagram from "@/components/CirkelDiagram.vue";
 
 @Component({
-  components: { Tabell, StapelDiagram }
+  components: { Tabell, CirkelDiagram, StapelDiagram }
 })
 export default class Statistik extends Vue {
   statistik: StatistikData = null;
