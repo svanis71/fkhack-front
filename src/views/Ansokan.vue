@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="Ansokan">
+    <h1>This is an Ansokan page</h1>
     <p v-if="stuff.flode === 'A'">Långkalsonger</p>
     <p v-if="stuff.flode === 'B'">Saltgurka</p>
 
@@ -16,7 +16,7 @@ interface Blaha {
   ref: string;
 }
 @Component({})
-export default class Home extends Vue {
+export default class Statistik extends Vue {
   stuff: Blaha = null;
 
   created() {

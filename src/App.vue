@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Start</router-link>|
-      <router-link to="/about">About</router-link>
+      <router-link to="/Ansokan">Ansokan</router-link>
+      <router-link to="/Statistik">Statistik</router-link>
     </div>
     <router-view/>
   </div>
@@ -35,7 +36,6 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 #nav {

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="Statistik">
     <button @click="login('1')">Person 1</button>
     <button @click="login('2')">Person 2</button>
   </div>
@@ -20,9 +20,9 @@ import { BAS_URL } from "../main";
       });
       const data = await response.text();
       sessionStorage.setItem("stuff", data);
-      this.$router.push("about");
+      this.$router.push("Ansokan");
     }
   }
 })
-export default class Home extends Vue {}
+export default class Statistik extends Vue {}
 </script>
