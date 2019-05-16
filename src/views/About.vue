@@ -1,20 +1,35 @@
 <template>
     <div class="about">
         <h1>This is an about page</h1>
-        <p>{{ flode }}</p>
+        <p v-if="stuff.flode === 'A'">Långkalsonger</p>
+        <p v-if="stuff.flode === 'B'">Saltgurka</p>
+
+        <button @click="avsluta">Skicka in</button>
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
 
+    interface Blaha {
+        flode: string;
+        ref: string;
+
+    }
     @Component({})
     export default class Home extends Vue {
-        flode: string = "";
+        stuff: Blaha = null;
 
         created() {
-            const data = JSON.parse(sessionStorage.getItem('data') || '{}');
-            this.flode = data.flode;
+            this.stuff = JSON.parse(sessionStorage.getItem('stuff') || '{}')
+        }
+
+        async avsluta() {
+            const response = await fetch("https://fkhack-rest.herokuapp.com/avsluta",
+                {headers: {token: this.stuff.ref}});
+            if(response.ok) {
+                alert('Bra jobbat!');
+            }
         }
     }
 </script>
