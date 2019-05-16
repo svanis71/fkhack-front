@@ -1,5 +1,26 @@
 <template>
-  <div class="Statistik">
+  <div>
+    <div class="powerpoint">
+        <h1>A/B testning</h1>
+        <h2>Problembeskrivning</h2>
+        <div>
+          <ul>
+            <li>Incidenter för att kund missförstår hur de ska gå tillväga exempelvis kontoändringar.</li>
+            <li>Man vill enkelt testa olika lösningar.</li>
+          </ul>
+        </div>
+        <h2>Vem är intresserad av detta</h2>
+        <ul>
+          <li>ID, AD, utvecklare</li>
+          <li>Verksamhetsutvecklare</li>
+          <li>Handläggare</li>
+          <li>Många fler</li>
+        </ul>
+        <h2>Vad vill vi visa med detta demot</h2>
+        <ul>
+          <li>Det behöver inte vara svårt eller dyrt.</li>
+        </ul>
+      </div>
     <p class="kvittens" v-if="visaStatus">Tack för din ansökan.</p>
     <div class="personer">
       <a @click="login('197109259288')">
@@ -24,6 +45,17 @@
 <style scoped lang="stylus">
 button {
   margin-right: 1rem;
+}
+
+.powerpoint {
+  border solid 2px black
+  width 50%
+  border-radius 3px
+  margin-bottom 2em
+  padding 1em
+}
+ul {
+  margin-bottom 1em
 }
 
 form {
