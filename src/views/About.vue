@@ -1,35 +1,35 @@
 <template>
-    <div class="about">
-        <h1>This is an about page</h1>
-        <p v-if="stuff.flode === 'A'">Långkalsonger</p>
-        <p v-if="stuff.flode === 'B'">Saltgurka</p>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <p v-if="stuff.flode === 'A'">Långkalsonger</p>
+    <p v-if="stuff.flode === 'B'">Saltgurka</p>
 
-        <button @click="avsluta">Skicka in</button>
-    </div>
+    <button @click="avsluta">Skicka in</button>
+  </div>
 </template>
 
 <script lang="ts">
-    import {Component, Prop, Vue} from 'vue-property-decorator';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { BAS_URL } from "../main";
+interface Blaha {
+  flode: string;
+  ref: string;
+}
+@Component({})
+export default class Home extends Vue {
+  stuff: Blaha = null;
 
-    interface Blaha {
-        flode: string;
-        ref: string;
+  created() {
+    this.stuff = JSON.parse(sessionStorage.getItem("stuff") || "{}");
+  }
 
+  async avsluta() {
+    const response = await fetch(`${BAS_URL}/avsluta`, {
+      headers: { token: this.stuff.ref }
+    });
+    if (response.ok) {
+      alert("Bra jobbat!");
     }
-    @Component({})
-    export default class Home extends Vue {
-        stuff: Blaha = null;
-
-        created() {
-            this.stuff = JSON.parse(sessionStorage.getItem('stuff') || '{}')
-        }
-
-        async avsluta() {
-            const response = await fetch("https://fkhack-rest.herokuapp.com/avsluta",
-                {headers: {token: this.stuff.ref}});
-            if(response.ok) {
-                alert('Bra jobbat!');
-            }
-        }
-    }
+  }
+}
 </script>
