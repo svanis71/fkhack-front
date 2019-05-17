@@ -38,10 +38,13 @@
 
 .powerpoint {
   border: solid 2px black;
-  width: 50%;
   border-radius: 3px;
   margin-bottom: 2em;
   padding: 1em;
+
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+  }
 }
 
 ul {

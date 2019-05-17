@@ -2,7 +2,7 @@
   <div class="Statistik" v-if="statistik">
     <div class="tabeller">
       <div>
-        <h2>Total</h2>
+        <h2>Totalt</h2>
         <Tabell v-bind:values="statistik.total"></Tabell>
       </div>
       <div>
