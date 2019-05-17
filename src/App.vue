@@ -8,7 +8,9 @@
         <router-link to="/">
           <img src="./assets/avatar.svg">Logga in
         </router-link>
-        <router-link to="/Statistik">Statistik</router-link>
+        <router-link to="/Statistik">
+          <img src="./assets/graph.svg">Statistik
+        </router-link>
         <router-link to="/Powerpoint">
           <img src="./assets/hamburgare.svg">
           Powerpoint
