@@ -1,6 +1,6 @@
 <template>
   <div class="Ansokan" :class="classes">
-    <h1>Ansökan om bidrag</h1>
+    <h1>Ansökan om bidrag (Grupp {{stuff.flode}})</h1>
     <div>
       <label for="text1">{{ansokanformulering}}</label>
       <input id="text1" type="text" autocomplete="off">
