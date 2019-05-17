@@ -6,16 +6,16 @@
       </div>
       <nav>
         <router-link to="/">
-          <img src="./assets/avatar.svg">Start
+          <img src="./assets/avatar.svg">Logga in
         </router-link>
         <router-link to="/Statistik">Statistik</router-link>
-        <a href="#" id="fejkmeny">
-          <img src="./assets/hamburgare.svg">Meny
-        </a>
+        <router-link to="/Powerpoint">
+          <img src="./assets/hamburgare.svg">
+          Powerpoint
+        </router-link>
       </nav>
     </header>
     <main>
-      
       <router-view/>
     </main>
   </div>

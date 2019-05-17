@@ -1,27 +1,6 @@
 <template>
   <div>
-    <div class="powerpoint">
-        <h1>A/B testning</h1>
-        <h2>Problembeskrivning</h2>
-        <div>
-          <ul>
-            <li>Incidenter för att kund missförstår hur de ska gå tillväga exempelvis kontoändringar.</li>
-            <li>Man vill enkelt testa olika lösningar.</li>
-          </ul>
-        </div>
-        <h2>Vem är intresserad av detta</h2>
-        <ul>
-          <li>ID, AD, utvecklare</li>
-          <li>Verksamhetsutvecklare</li>
-          <li>Handläggare</li>
-          <li>Många fler</li>
-        </ul>
-        <h2>Vad vill vi visa med detta demot</h2>
-        <ul>
-          <li>Det behöver inte vara svårt eller dyrt.</li>
-        </ul>
-      </div>
-    <p class="kvittens" v-if="visaStatus">Tack för din ansökan.</p>
+    <h1>Logga in</h1>
     <div class="personer">
       <a @click="login('197109259288')">
         <img src="../assets/person1.png">
@@ -47,15 +26,13 @@ button {
   margin-right: 1rem;
 }
 
-.powerpoint {
-  border solid 2px black
-  width 50%
-  border-radius 3px
-  margin-bottom 2em
-  padding 1em
-}
-ul {
-  margin-bottom 1em
+h1 {
+  background: url('../assets/hanglas.svg') no-repeat 0px 7px;
+  background-size: 64px;
+  line-height: 1.6;
+  padding-left: 84px;
+  padding-top: 8px;
+  padding-bottom: 2px;
 }
 
 form {
@@ -69,9 +46,6 @@ form {
   a {
     cursor: pointer;
   }
-}
-
-.kvitten {
 }
 </style>
 
