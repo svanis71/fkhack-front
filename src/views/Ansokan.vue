@@ -5,7 +5,7 @@
       <label for="text1">{{ansokanformulering}}</label>
       <input id="text1" type="text" autocomplete="off">
 
-      <label for="pengar">Har du redan mycket pengar?</label>
+      <label for="pengar">Har du fått ersättning tidigare?</label>
       <div class="radioknappar" v-if="stuff.flode === 'A'">
         <label>
           <input type="radio" value="ja" name="pengar">
@@ -98,14 +98,12 @@ interface Blaha {
 @Component({})
 export default class Statistik extends Vue {
   stuff: Blaha = null;
-  ansokanformulering: string = "Hur mycket pengar vill du ha?";
+  ansokanformulering: string = "";
 
   created() {
     this.stuff = JSON.parse(sessionStorage.getItem("stuff") || "{}");
     this.ansokanformulering =
-      this.stuff!.flode === "A"
-        ? "Hur mycket pengar vill du ha?"
-        : "Hur många kronor önskas?";
+      this.stuff!.flode === "A" ? "Vilket belopp ansöker du om?" : "Belopp";
   }
 
   public get classes() {
