@@ -3,28 +3,30 @@
     <div class="powerpoint">
       <h1>A/B testning</h1>
       <div class="beskrivning">
-        <h2>Vad innebär det?</h2>Används för att optimera webbsidor.
-        <br>Ett experiment med två olika gränssnitt som väljs ut och testas mot varandra.
+        <h2>Vad innebär det?</h2>
+        <ul>
+          <li>Används för att optimera webbsidor.</li>
+          <li>Ett experiment med två olika gränssnitt som väljs ut och testas mot varandra.</li>
+        </ul>
       </div>
       <div>
-        <h2>Problembeskrivning</h2>
+        <h2>Syfte</h2>
         <div>
           <ul>
-            <li>Kund missförstår hur de ska gå tillväga.</li>
-            <li>Man vill enkelt testa olika lösningar.</li>
+            <li>Man vill enkelt testa olika lösningar i produktion.</li>
           </ul>
         </div>
-        <h2>Vilka är intresserade av detta?</h2>
+        <h2>Vilka kan dra nytta av detta?</h2>
         <ul>
-          <li>ID, AD, utvecklare</li>
-          <li>Verksamhetsutvecklare</li>
+          <li>Kunder</li>
           <li>Handläggare</li>
+          <li>Verksamhetsutvecklare</li>
+          <li>ID, AD, utvecklare</li>
           <li>Många fler</li>
         </ul>
-        <h2>Vad vill vi visa med detta demot?</h2>
+        <h2>Vad vill vi visa?</h2>
         <ul>
           <li>Det behöver inte vara svårt eller dyrt.</li>
-          <li>Exempel på statistik.</li>
         </ul>
       </div>
     </div>

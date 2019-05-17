@@ -17,14 +17,6 @@
   </div>
 </template>
 
-<style scoped lang="stylus">
-table {
-  border: 1px solid black;
-  margin-bottom: 20px;
-  padding 0.5em
-}
-</style>
-
 
 
 <script lang="ts">
@@ -39,8 +31,18 @@ export default class Tabell extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
+table {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 0.5em;
+}
+
 h3 {
   margin: 40px 0 0;
+}
+
+th {
+  text-align: left;
 }
 
 ul {
