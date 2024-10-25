@@ -15,7 +15,7 @@
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
     "express": "^4.16.4",
-    "vue": "^2.6.10",
+    "vue": "^3.0.0",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3"
